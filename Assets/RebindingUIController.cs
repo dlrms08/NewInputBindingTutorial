@@ -4,14 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-public class RebindingDisplay : MonoBehaviour
+public class RebindingUIController : MonoBehaviour
 {
     public List<InputActionReference> Actions;
+    public List<KeySettingSection> Sections;
     [SerializeField] private CubeController cubeController = null;
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation = null;
-       private const string RebindsKey = "rebinds";
+    private const string RebindsKey = "rebinds";
 
+    private void Start()
+    {   
+        string rebinds = PlayerPrefs.GetString(RebindsKey, string.Empty);
+
+        if (string.IsNullOrEmpty(rebinds)) { return; }
+
+        cubeController.PlayerInput.actions.LoadBindingOverridesFromJson(rebinds);
+        
+        int bindingIndex = Actions[1].action.GetBindingIndexForControl(Actions[1].action.controls[0]);
+
+        Sections[4].bindingDisplayNameText.text = InputControlPath.ToHumanReadableString(
+            Actions[1].action.bindings[bindingIndex].effectivePath,
+            InputControlPath.HumanReadableStringOptions.OmitDevice);
+    }
     
     public void Save()
     {
