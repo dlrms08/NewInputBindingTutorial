@@ -1,0 +1,104 @@
+{
+    "name": "GameControl",
+    "maps": [
+        {
+            "name": "CubeControl",
+            "id": "473d4177-470b-49cc-a9f8-8317d54a9561",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "1688b724-91b3-47b1-bae0-225b3e4c1e5f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "1be328dd-cc0e-4409-91cd-d670df5876d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1fb2c25e-2ea0-473e-9b61-a696ab8107e6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "WASD",
+                    "id": "04251bd1-2430-4390-974c-150aba0cb0b3",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "43c03d40-24d4-40a4-b60d-7f506ea71db7",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "45be79d9-26df-4ae5-ba7a-08e0bb6bc283",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "beb40e49-b6ed-4387-8822-38603a6322a6",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0999cc27-8e92-41eb-9ef2-7348f43128f1",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "MenuControl",
+            "id": "4e4c6e8d-b183-4ba1-987d-06eab611e050",
+            "actions": [],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}
