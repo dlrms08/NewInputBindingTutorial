@@ -23,13 +23,19 @@ namespace TB_Tool
         //편의에 따라서 "MoveSections"과 "ButtonSections"을 구분했지만, 통합한 리스트를 생성하셔도 상관없습니다.
         public List<TB_Tool.KeyRebindInfo> ButtonSections;
 
-        [Tooltip("세이브 버튼입니다.")]
-        public Button saveButton;
+        [Tooltip("키 바인딩 UI 오브젝트 입니다.")]
+        public GameObject keyBindingUI;
 
-        //키 리바인딩과 관련된 모든 버튼의 리스트 입니다.
-        //"MoveSections", "ButtonSections" 및 추가 오브젝트에서 "Button" 컴포넌트를 참조시킵니다.
-        [SerializeField]private List<Button> rebindButtons;
-        
+        //키 바인딩 UI 메뉴 셀렉트용 게임 오브젝트 리스트 입니다.
+        //"keyBindingUI"의 자식 오브젝트를 참조하기 때문에 반드시 "keyBindingUI"이 설정되어 있어야 합니다.
+        [HideInInspector] 
+        public List<GameObject> selectObjects;
+
+        //키 바인딩 버튼 리스트 입니다.
+        //"keyBindingUI"의 자식 오브젝트를 참조하기 때문에 반드시 "keyBindingUI"이 설정되어 있어야 합니다.
+        [HideInInspector] 
+        public List<Button> keyBindingButtons;
+
         [Tooltip("리바인딩 된 키를 반영할 대상이될 타겟 오브젝트입니다.")]
         // 보통 주인공 캐릭터를 등록하시면 됩니다. 
         //단, 반드시 주인공 캐릭터에게 'PlayerInput' 컴포넌트가 어태치 되어 있어야 합니다."
@@ -78,33 +84,34 @@ namespace TB_Tool
                 }
             }
 
-            //"MoveSections", "ButtonSections"오브 젝트에서 "Button" 컴포넌트를 리스트화 합니다.
-            foreach(var b in MoveSections)
+            //키 바인딩 UI의 셀렉트 표시용 오브젝트들을 리스트업 합니다.
+            for(int i = 0; i < keyBindingUI.transform.childCount; i++ )
             {
-                rebindButtons.Add(b.StartRebindObj.GetComponent<Button>());
-            }
-            foreach(var b in ButtonSections)
-            {
-                rebindButtons.Add(b.StartRebindObj.GetComponent<Button>());
+                selectObjects.Add(keyBindingUI.transform.GetChild(i).Find("Select").gameObject);
             }
 
-            //세이브 버튼을 리스트에 추가합니다.
-            rebindButtons.Add(saveButton);
-
-            //rebindButtons List를 기준으로 가장 위의 버튼(0)을 제외한 나머지 버튼을 비활성화 합니다.
-            for(int i = 0; i < rebindButtons.Count; i++)
+            //키 바인딩 버튼들을 리스트업 합니다.
+            for(int i = 0; i < keyBindingUI.transform.childCount; i++ )
             {
-                if(i == 0)
-                {
-                    rebindButtons[i].interactable = true;
-                }
-                else
-                {
-                    rebindButtons[i].interactable = false;
-                }
+                keyBindingButtons.Add(keyBindingUI.transform.GetChild(i).Find("Button").GetComponent<Button>());
             }
         }
 
+        //rebindButtons List를 기준으로 지정한 번호(num)을 제외한 나머지 버튼을 비활성화 합니다.
+        public void buttonUIControl(int num)
+        {
+            for(int i = 0; i < selectObjects.Count; i++)
+            {
+                if(i == num)
+                {
+                    selectObjects[i].SetActive(true);
+                }
+                else
+                {
+                    selectObjects[i].SetActive(false);
+                }
+            }
+        }
         
         //현재 바인딩 상태를 저장합니다.
         public void Save()
@@ -127,6 +134,13 @@ namespace TB_Tool
 
             rebindingOperation = Actions[section.rebindActionIndex].action.PerformInteractiveRebinding(section.rebindBindingIndex)
                 .WithControlsExcluding("Mouse")
+                .WithControlsExcluding("<Gamepad>/Start")
+                .WithControlsExcluding("<Keyboard>/escape")
+                .WithControlsExcluding("<Keyboard>/upArrow")
+                .WithControlsExcluding("<Keyboard>/downArrow")
+                .WithControlsExcluding("<Keyboard>/leftArrow")
+                .WithControlsExcluding("<Keyboard>/rightArrow")
+                .WithControlsExcluding("<Keyboard>/enter")
                 .OnMatchWaitForAnother(0.1f)
                 .OnComplete(oerration => RebindComplete(section))
                 .Start();
