@@ -456,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RebindingDisplay, Assembly-CSharp
+      value: RebindingUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -464,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 1845372459}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: KeySettingSection, Assembly-CSharp
+      value: KeyRebindInfo, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077928, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Pivot.x
@@ -556,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077935, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Name
-      value: Text (Legacy) (4)
+      value: attack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
@@ -690,7 +690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RebindingDisplay, Assembly-CSharp
+      value: RebindingUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -698,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 1629374911}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: KeySettingSection, Assembly-CSharp
+      value: KeyRebindInfo, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077928, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Pivot.x
@@ -786,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077935, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Name
-      value: Text (Legacy)
+      value: move_up
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
@@ -823,7 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RebindingDisplay, Assembly-CSharp
+      value: RebindingUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -831,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 489824795}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: KeySettingSection, Assembly-CSharp
+      value: KeyRebindInfo, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077928, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Pivot.x
@@ -923,7 +923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077935, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Name
-      value: Text (Legacy) (2)
+      value: move_left
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
@@ -960,7 +960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RebindingDisplay, Assembly-CSharp
+      value: RebindingUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -968,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 1439234035}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: KeySettingSection, Assembly-CSharp
+      value: KeyRebindInfo, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077928, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Pivot.x
@@ -1060,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077935, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Name
-      value: Text (Legacy) (1)
+      value: move_down
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
@@ -1097,7 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: RebindingDisplay, Assembly-CSharp
+      value: RebindingUIController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -1105,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 130343107}
     - target: {fileID: 7467778183659288159, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: KeySettingSection, Assembly-CSharp
+      value: KeyRebindInfo, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077928, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Pivot.x
@@ -1197,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467778184726077935, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
       propertyPath: m_Name
-      value: Text (Legacy) (3)
+      value: move_right
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807f4617396a14859bc34b71c1cc236c, type: 3}
@@ -1633,10 +1633,11 @@ MonoBehaviour:
   Actions:
   - {fileID: -520805209859636202, guid: b66b2baf12b2b45bcaf0c1150addcf11, type: 3}
   - {fileID: -119610132316419739, guid: b66b2baf12b2b45bcaf0c1150addcf11, type: 3}
-  Sections:
+  MoveSections:
   - {fileID: 1629374911}
   - {fileID: 1439234035}
   - {fileID: 489824795}
   - {fileID: 130343107}
+  ButtonSections:
   - {fileID: 1845372459}
   cubeController: {fileID: 332387176}

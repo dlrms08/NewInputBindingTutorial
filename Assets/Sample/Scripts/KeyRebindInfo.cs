@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeySettingSection : MonoBehaviour
+public class KeyRebindInfo : MonoBehaviour
 {
    public int rebindActionIndex;
    public int rebindControlIndex;

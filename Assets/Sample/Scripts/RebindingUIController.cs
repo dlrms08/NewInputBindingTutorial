@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class RebindingUIController : MonoBehaviour
 {
     public List<InputActionReference> Actions;
-    public List<KeySettingSection> Sections;
+    public List<KeyRebindInfo> MoveSections;
+    public List<KeyRebindInfo> ButtonSections;
     [SerializeField] private CubeController cubeController = null;
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation = null;
@@ -20,12 +21,32 @@ public class RebindingUIController : MonoBehaviour
         if (string.IsNullOrEmpty(rebinds)) { return; }
 
         cubeController.PlayerInput.actions.LoadBindingOverridesFromJson(rebinds);
-        
-        int bindingIndex = Actions[1].action.GetBindingIndexForControl(Actions[1].action.controls[0]);
 
-        Sections[4].bindingDisplayNameText.text = InputControlPath.ToHumanReadableString(
-            Actions[1].action.bindings[bindingIndex].effectivePath,
-            InputControlPath.HumanReadableStringOptions.OmitDevice);
+        foreach(var binding in Actions)
+        {
+            Debug.Log(binding.action.name);
+            if(binding.action.name == "Move")
+            {
+                for (int i = 0; i < binding.action.controls.Count; i++)
+                {
+                    int bindingIndex = binding.action.GetBindingIndexForControl(binding.action.controls[i]);
+                    MoveSections[i].bindingDisplayNameText.text = InputControlPath.ToHumanReadableString(
+                    binding.action.bindings[bindingIndex].effectivePath,
+                    InputControlPath.HumanReadableStringOptions.OmitDevice);
+                }
+            }
+            
+            else if(binding.action.name == "Attack")
+            {
+                for (int i = 0; i < binding.action.controls.Count; i++)
+                {
+                    int bindingIndex = binding.action.GetBindingIndexForControl(binding.action.controls[i]);
+                    ButtonSections[i].bindingDisplayNameText.text = InputControlPath.ToHumanReadableString(
+                    binding.action.bindings[bindingIndex].effectivePath,
+                    InputControlPath.HumanReadableStringOptions.OmitDevice);
+                }
+            }
+        }
     }
     
     public void Save()
@@ -35,7 +56,7 @@ public class RebindingUIController : MonoBehaviour
         PlayerPrefs.SetString(RebindsKey, rebinds);
     }
     
-    public void StartRebinding(KeySettingSection section)
+    public void StartRebinding(KeyRebindInfo section)
     {
         section.StartRebindObj.SetActive(false);
         section.waitingForInputObj.SetActive(true);
@@ -49,7 +70,7 @@ public class RebindingUIController : MonoBehaviour
             .Start();
     }
 
-    private void RebindComplete(KeySettingSection section)
+    private void RebindComplete(KeyRebindInfo section)
     {
         int bindingIndex = Actions[section.rebindActionIndex].action.GetBindingIndexForControl(Actions[section.rebindActionIndex].action.controls[section.rebindControlIndex]);
 
