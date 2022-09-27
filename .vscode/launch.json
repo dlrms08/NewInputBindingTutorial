@@ -7,7 +7,7 @@
         {
             "name": "Unity Editor",
             "type": "unity",
-            "path": "/Users/gonlee/GitHub/InputStudy/Library/EditorInstance.json",
+            "path": "/Users/gonlee/GitHub/NewInputBindingTutorial/Library/EditorInstance.json",
             "request": "launch"
         },
         {

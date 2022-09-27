@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 7467778184726077930}
   - component: {fileID: 7467778184726077929}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: RebindingButtonPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
